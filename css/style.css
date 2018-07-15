@@ -1,0 +1,114 @@
+/** COLOURS
+darkest: #363636
+brown: #856A5D
+yellow: #F6AE2D
+blue: #1C5D99
+lightest: #e5e5e5
+ */
+
+body {
+    background-color: #363636;
+    color: #e5e5e5;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+    color: #F6AE2D;
+    font-family: 'Antic Didone', serif;
+}
+
+h2,h3,h4,h5,h6 {
+    color: #1C5D99;
+    font-family: 'Antic Didone', serif;
+}
+
+#main-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    #restricting-box {
+        width: 40%;
+        margin:0 auto;
+    }
+
+    #content-box {
+        width: 40%;
+        margin:0 auto;
+    }
+
+    .card-columns {
+        width: 70%;
+        margin:0 auto;
+    }
+}
+
+#explanation {
+    color: #856A5D;
+}
+
+#content-box {
+    padding-top: 100px;
+}
+
+.form-group {
+    padding-bottom: 25px;
+}
+
+.btn-primary {
+    background-color: #856A5D;
+    border-color: #856A5D;
+    color: #e5e5e5;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.btn-primary:hover {
+    background-color: #F6AE2D;
+    border-color: #F6AE2D;
+    color: #363636;
+}
+
+#errorAlert {
+    visibility: hidden;
+}
+
+/**
+JSON syntax
+ */
+pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+.card {
+    background-color: #e5e5e5;
+}
+
+.card p {
+    color: #363636;
+}
+
+.card-title, .card-text {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.text-muted a {
+    color: #856A5D;
+}
+
+.card-primary {
+    background-color: #F6AE2D;
+}
+
+.card-img-top {
+    margin-bottoM: 15px;
+}
+
+.card-footer {
+    margin-top: 15px;
+}

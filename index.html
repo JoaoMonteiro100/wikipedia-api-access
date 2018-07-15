@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wikinfo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone|Source+Sans+Pro" rel="stylesheet">
+</head>
+<body>
+
+<div id="errorAlert" class="alert alert-danger" role="alert">
+    <strong>Oops!</strong> Something went wrong. Try again!
+</div>
+
+<div id="info"></div>
+
+<h1 id="main-title" class="text-center">Wikinfo</h1>
+
+<div id="restricting-box">
+    <p id="explanation" class="text-center">This tool allows you to retrieve specific information from several wikipedia pages at once. Just choose the categories you wish to look into and the type of results you want.</p>
+</div>
+
+<div id="content-box">
+    <form id="queryBuilder">
+
+        <div class="form-group row">
+            <label class="col-sm-2" for="langSelect">Language:</label>
+            <div class="col-sm-10">
+                <select name="language" class="custom-select mr-sm-2" id="langSelect">
+                    <option value="en" selected>English</option>
+                    <option value="pt">Portuguese</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputCat" class="col-sm-2 col-form-label">Category: </label>
+            <div class="col-sm-10">
+                <input type="text" name="category" class="form-control" id="inputCat" placeholder="Category name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2">Content:</div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" name="content" type="checkbox" id="contentCheck" value="titles" checked>
+                    <label class="form-check-label" for="contentCheck">
+                        Titles
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" name="content" type="checkbox" id="imagesCheck" value="mainImages">
+                    <label class="form-check-label" for="imagesCheck">
+                        Main images
+                    </label>
+                </div>
+            </div>
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Output:</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="output" id="displayRadio" value="displayOnScreen" checked>
+                        <label class="form-check-label" for="displayRadio">
+                            Display on page
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-1">
+                <button type="submit" id="action-button" class="btn btn-primary">Go!</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="card-columns">
+    <div class="card">
+        <img class="card-img-top img-fluid" src="https://scontent.fopo1-1.fna.fbcdn.net/v/t1.0-9/37272281_2115091425416859_8968344833097728000_n.jpg?_nc_cat=0&oh=635658943c0fabe7caa4d78e0ad17d37&oe=5BCBE7F6" alt="Card image cap">
+        <div class="card-block">
+            <h4 class="card-title">Card title that wraps to a new line is it really lemme check</h4>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Last updated <a href="#">3 mins ago</a></small>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+<script src="js/petscan.js"></script>
+</html>
