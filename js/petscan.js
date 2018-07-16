@@ -68,14 +68,51 @@ function syntaxHighlight(json) {
 }
 
 function showResults(displayOption, listOfResults) {
-    for(i = 0; i < listOfResults.length; i++) {
-        window.alert(listOfResults[i].pages);
+    var pages = listOfResults.query.pages;
+    console.log(pages);
+    if(true) {
+
+        for (var key in pages) {
+            var source = "https://en.wikipedia.org/?curid=" + key;
+            var imageString = '';
+
+            if(pages[key].original != null) {
+                imageString = '        <img class="card-img-top img-fluid" src="' + pages[key].original.source +
+                    '" alt="Main image">\n'
+            }
+
+
+            var code = '<div class="card">\n' + imageString +
+                '        <div class="card-block">\n' +
+                '            <h4 class="card-title">' + pages[key].title +
+                '</h4>\n' +
+                '            <p class="card-text"></p>\n' +
+                '        </div>\n' +
+                '        <div class="card-footer">\n' +
+                '            <small class="text-muted">Source: <a href="' + source + '" target="_blank">' + source +
+            '</a></small>\n' +
+                '        </div>\n' +
+                '    </div>';
+
+            var htmlObject = $(code);
+
+            var element = document.getElementById("cardsBox");
+            element.insertAdjacentHTML( 'beforeend', code );
+            console.log("Key: " + key);
+            console.log("Value: " + pages[key]);
+
+
+        }
     }
 }
 
 function queryEachPage(list, displayOption, language, titles, mainImages) {
     var cycles = Math.ceil(list.length/20);
-    var fullinfo = [];
+
+    var elem = document.getElementById("content-box");
+    elem.parentNode.removeChild(elem);
+    elem = document.getElementById("restricting-box");
+    elem.parentNode.removeChild(elem);
 
     for(i = 0; i < cycles; i++) {
         var concatList = "";
@@ -108,7 +145,8 @@ function queryEachPage(list, displayOption, language, titles, mainImages) {
                 document.getElementById("errorAlert").style.visibility = "visible";
             },
             success: function(data) {
-                fullinfo.push(data);
+                //fullinfo.push(data);
+                showResults(displayOption, data);
                 //$('#info')
                 //    .append(syntaxHighlight(JSON.stringify(data)))
             },
@@ -116,9 +154,8 @@ function queryEachPage(list, displayOption, language, titles, mainImages) {
         });
     }
 
-    $.when($, fullinfo).done(function(){
-        showResults(displayOption, fullinfo);
-    });
+    //$.when($, fullinfo).done(function(){
+    //});
 
 }
 
@@ -130,7 +167,8 @@ $(':submit').click(function(event){
     //window.alert(formData.get("category"));
 
     var language = formData.get('language');
-    var category = escapeHtml(formData.get('category'));
+    //var category = escapeHtml(formData.get('category'));
+    var category = formData.get('category');
     var depth = '0';
     var combination = 'union';
     var editedAfter = '';

@@ -25,6 +25,7 @@ h2,h3,h4,h5,h6 {
 #main-title {
     padding-top: 20px;
     padding-bottom: 20px;
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -111,4 +112,8 @@ pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
 
 .card-footer {
     margin-top: 15px;
+}
+
+#cardsBox {
+    padding-top: 70px;
 }

@@ -16,7 +16,7 @@
 
 <div id="info"></div>
 
-<h1 id="main-title" class="text-center">Wikinfo</h1>
+<h1 id="main-title" class="text-center" onClick="window.location.reload()">Wikinfo</h1>
 
 <div id="restricting-box">
     <p id="explanation" class="text-center">This tool allows you to retrieve specific information from several wikipedia pages at once. Just choose the categories you wish to look into and the type of results you want.</p>
@@ -38,21 +38,40 @@
             <label for="inputCat" class="col-sm-2 col-form-label">Category: </label>
             <div class="col-sm-10">
                 <input type="text" name="category" class="form-control" id="inputCat" placeholder="Category name">
+                <button disabled style="margin-top:10px;padding-left:10px;padding-right:10px;">+</button>
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-2">Content:</div>
+            <div class="col-sm-2">Page content:</div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" name="content" type="checkbox" id="contentCheck" value="titles" checked>
+                    <input class="form-check-input" name="content" type="checkbox" id="contentCheck" value="titles" checked disabled>
                     <label class="form-check-label" for="contentCheck">
-                        Titles
+                        Title
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" name="content" type="checkbox" id="imagesCheck" value="mainImages">
+                    <input class="form-check-input" name="content" type="checkbox" id="imagesCheck" value="mainImages" checked disabled>
                     <label class="form-check-label" for="imagesCheck">
-                        Main images
+                        Main image (if it exists)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                    <label class="form-check-label" for="defaultCheck2">
+                        All images
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                    <label class="form-check-label" for="defaultCheck2">
+                        First 3 sentences
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                    <label class="form-check-label" for="defaultCheck2">
+                        Categories
                     </label>
                 </div>
             </div>
@@ -67,6 +86,18 @@
                             Display on page
                         </label>
                     </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="output" id="displayRadio" value="displayOnScreen" disabled>
+                        <label class="form-check-label" for="displayRadio">
+                            JSON
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="output" id="displayRadio" value="displayOnScreen" disabled>
+                        <label class="form-check-label" for="displayRadio">
+                            HTML
+                        </label>
+                    </div>
                 </div>
             </div>
         </fieldset>
@@ -78,17 +109,8 @@
     </form>
 </div>
 
-<div class="card-columns">
-    <div class="card">
-        <img class="card-img-top img-fluid" src="https://scontent.fopo1-1.fna.fbcdn.net/v/t1.0-9/37272281_2115091425416859_8968344833097728000_n.jpg?_nc_cat=0&oh=635658943c0fabe7caa4d78e0ad17d37&oe=5BCBE7F6" alt="Card image cap">
-        <div class="card-block">
-            <h4 class="card-title">Card title that wraps to a new line is it really lemme check</h4>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated <a href="#">3 mins ago</a></small>
-        </div>
-    </div>
+<div id="cardsBox" class="card-columns">
+
 </div>
 
 </body>
