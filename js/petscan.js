@@ -67,13 +67,13 @@ function syntaxHighlight(json) {
     });
 }
 
-function showResults(displayOption, listOfResults) {
+function showResults(language, displayOption, listOfResults) {
     var pages = listOfResults.query.pages;
     console.log(pages);
     if(true) {
 
         for (var key in pages) {
-            var source = "https://en.wikipedia.org/?curid=" + key;
+            var source = "https://" + language + ".wikipedia.org/?curid=" + key;
             var imageString = '';
 
             if(pages[key].original != null) {
@@ -146,7 +146,7 @@ function queryEachPage(list, displayOption, language, titles, mainImages) {
             },
             success: function(data) {
                 //fullinfo.push(data);
-                showResults(displayOption, data);
+                showResults(language, displayOption, data);
                 //$('#info')
                 //    .append(syntaxHighlight(JSON.stringify(data)))
             },
